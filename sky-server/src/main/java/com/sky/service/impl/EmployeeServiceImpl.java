@@ -110,6 +110,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     public Employee getById(Long id) {
         Employee employee = employeeMapper.getById(id);
+        // 持久层也会把密码传回来，所以我们在后端要把密码给隐藏掉
         employee.setPassword("****");
         return employee;
     }
